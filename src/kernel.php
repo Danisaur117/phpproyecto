@@ -1,8 +1,7 @@
 <?php
 namespace App;
 
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
+use App\helper\MonoLog;
 use DI\ContainerBuilder;
 use Kint;
 
@@ -14,9 +13,10 @@ class kernel
 
     public function __construct()
     {
-        $this->logger = new Logger('Kernel');
-        $this->logger->pushHandler(new StreamHandler(dirname(__DIR__).'/var/log/prod.log'), Logger::DEBUG);
-        $this->container = $this->createContainer();
+
+       $this->logger = new MonoLog();
+       $this->container = $this->createContainer();
+       $this->container->set(LoggerInterface::class, $this->logger);
        // Kint::dump($this->container);
     }
 
