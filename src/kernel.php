@@ -6,6 +6,7 @@ use App\ViewManager;
 use DI\ContainerBuilder;
 use Kint;
 use App\controllers\IndexController;
+use App\routing\Web;
 
 class kernel
 {
@@ -26,8 +27,10 @@ class kernel
     {
        
         $this->logger->info('Kernel up');
-        $indexController = new IndexController($this->container);
-        $indexController->index();
+        $httpMethod = $_SERVER['REQUEST_METHOD'];
+        $uri = parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
+        $route = $this->container->get(RoutingManager::class);
+        $route->dispatch($httpMethod, $uri, Web::getDispatcher());
      
     }
 
