@@ -35,6 +35,7 @@ class ViewManager
 
     public function renderTemplate( $template, $args=[])
     {
+        
         echo $this->render($template, $args);
     }
 

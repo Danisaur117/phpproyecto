@@ -5,6 +5,7 @@ use App\helper\MonoLog;
 use App\ViewManager;
 use DI\ContainerBuilder;
 use Kint;
+use App\controllers\IndexController;
 
 class kernel
 {
@@ -18,14 +19,16 @@ class kernel
        $this->logger = new MonoLog();
        $this->container = $this->createContainer();
        $this->container->set(LoggerInterface::class, $this->logger);
-       $ViewManager = new ViewManager();
+       
     }
 
     public function init()
     {
        
         $this->logger->info('Kernel up');
-        echo "<h1>Arrancado kernel</h1>";
+        $indexController = new IndexController($this->container);
+        $indexController->index();
+     
     }
 
 
