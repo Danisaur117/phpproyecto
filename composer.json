@@ -1,0 +1,10 @@
+{
+    "name": "xavi/proyecto-final",
+    "authors": [
+        {
+            "name": "Xavi",
+            "email": "xavi@geekshubs.com"
+        }
+    ],
+    "require": {}
+}
