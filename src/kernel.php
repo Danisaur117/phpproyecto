@@ -2,6 +2,7 @@
 namespace App;
 
 use App\helper\MonoLog;
+use App\ViewManager;
 use DI\ContainerBuilder;
 use Kint;
 
@@ -17,7 +18,7 @@ class kernel
        $this->logger = new MonoLog();
        $this->container = $this->createContainer();
        $this->container->set(LoggerInterface::class, $this->logger);
-       // Kint::dump($this->container);
+       $ViewManager = new ViewManager();
     }
 
     public function init()
@@ -41,4 +42,10 @@ class kernel
       return $containerBuilder->build();
 
     }
+
+   public static function getProjectDir():string
+   {
+       return dirname(__DIR__);
+   } 
+
 }
