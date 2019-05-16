@@ -11,6 +11,7 @@ class Web
             function (\FastRoute\RouteCollector $route){
                 $route->addRoute('GET','/',['App\controllers\IndexController','index']);
                 $route->addRoute('GET','/register',['App\controllers\RegisterController','index']);
+                $route->addRoute('POST','/register',['App\controllers\RegisterController','register']);
             }
 
         );

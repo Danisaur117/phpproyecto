@@ -1,6 +1,7 @@
 <?php
 namespace App\controllers;
 use App\ViewManager;
+use App\dao\registerDao;
 use Kint;
 
 class RegisterController extends Controller
@@ -10,6 +11,15 @@ class RegisterController extends Controller
        $viewManager = $this->container->get(ViewManager::class);
       
        $viewManager->renderTemplate("register.view.html");
+   }
+
+   public function register(){
+       $email = $_POST['email'];
+       $password = $_POST['passwd'];
+
+       $registerDao = new registerDao();
+       
+       echo "<h1>PROCESO DE REGISTRO $email $password </h1>";
    }
 
 }

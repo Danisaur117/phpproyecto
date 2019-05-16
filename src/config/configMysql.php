@@ -1,7 +1,7 @@
 <?php
 namespace App\config;
 
-class configMysqxl
+class configMysql
 {
   public static function getConfigDB(){
       return[
@@ -9,8 +9,8 @@ class configMysqxl
               'name'=>'valfeb19',
               'username'=>'root',
               'password'=>'44865710',
-              'connection'=>'mysql:host=127.0.0.1',
-              'options'=>''
+              'connection'=>'mysql:host=127.0.0.1'
+              //'options'=>''
             ]
         ];
   }
