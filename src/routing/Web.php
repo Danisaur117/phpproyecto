@@ -12,6 +12,7 @@ class Web
                 $route->addRoute('GET','/',['App\controllers\IndexController','index']);
                 $route->addRoute('GET','/register',['App\controllers\RegisterController','index']);
                 $route->addRoute('POST','/register',['App\controllers\RegisterController','register']);
+                $route->addRoute('GET','/login',['App\controllers\LoginController','index']);
             }
 
         );

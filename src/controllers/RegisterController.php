@@ -19,6 +19,7 @@ class RegisterController extends Controller
 
        $registerDao = new registerDao();
        $registerDao->saveUser($email, $password);
+       parent::returnView('');
 
    }
 
