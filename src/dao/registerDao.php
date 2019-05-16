@@ -1,17 +1,8 @@
 <?php
  namespace App\dao;
- use App\helper\ConnectMysql;
- use  App\config\configMysql;
-
-
- class registerDao
+ 
+ class registerDao extends Dao
  {
-
-    private $pdo;
-
-    public function __construct(){
-       $this->pdo= ConnectMysql::make(configMysql::getConfigDB()['database']);       
-    }
 
 
     public function saveUser(string $email, string $password){
