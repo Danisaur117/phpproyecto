@@ -9,10 +9,7 @@ class LoginController extends Controller
 {
 
     public function index(){
-        
-        $viewManager = $this->container->get(ViewManager::class);
-      
-        $viewManager->renderTemplate("login.view.html");
+        $this->viewManager->renderTemplate("login.view.html");
     }
 
     public function login(){

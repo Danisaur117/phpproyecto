@@ -1,6 +1,6 @@
 <?php
 namespace App\controllers;
-use App\ViewManager;
+
 use App\SessionManager;
 
 class AdminController extends Controller
@@ -11,9 +11,7 @@ class AdminController extends Controller
 
     $user = SessionManager::get("user");
     if($user){
-    $viewManager = $this->container->get(ViewManager::class);
-      
-    $viewManager->renderTemplate("admin.view.html");
+        $this->viewManager->renderTemplate("admin.view.html");
     } else{
         parent::returnView("login");
     }
