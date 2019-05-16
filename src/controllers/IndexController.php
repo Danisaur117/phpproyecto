@@ -9,7 +9,7 @@ class IndexController extends Controller
 
        $viewManager = $this->container->get(ViewManager::class);
       
-       $viewManager->renderTemplate("index.twig");
+       $viewManager->renderTemplate("index.view.html");
    }
 
 }

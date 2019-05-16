@@ -24,6 +24,13 @@ class RoutingManager
                 header("HTTP/1.0 404 Not Found");
                 echo "<h1>NOT FOUND </h1>";
                 break;
+
+            case FastRoute\Dispatcher::METHOD_NOT_ALLOWED:
+                header("HTTP/1.0 405 Method not Allowed");
+                echo '<h1>PETICIÓN NO PERMITIDA </h1>';
+                break;
+
+
             case FastRoute\Dispatcher::FOUND:
               $controller = $route[1];
               $params= $route[2];
