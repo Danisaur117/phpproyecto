@@ -10,7 +10,6 @@ class AdminController extends Controller
    {
 
     $user = SessionManager::get("user");
-    Kint::dump($user);
     if($user){
         $this->viewManager->renderTemplate("admin.view.html",array('user'=>$user));
     } else{
