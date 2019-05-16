@@ -4,6 +4,7 @@
 
  use App\kernel;
 
+ session_start();
 
  $kernel = new kernel();
  $kernel->init();

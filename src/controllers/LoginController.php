@@ -1,6 +1,7 @@
 <?php
 namespace App\controllers;
 use App\ViewManager;
+use App\SessionManager;
 use App\dao\loginDao;
 
 
@@ -21,7 +22,8 @@ class LoginController extends Controller
         $loginDao = new loginDao();
         $result = $loginDao->getUser($email, $pass)[0];
         if($result){
-            parent::returnView('');
+            SessionManager::put('user',$result);
+            parent::returnView('admin');
         }else{
             parent::returnView('login');
         }
