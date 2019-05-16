@@ -18,8 +18,8 @@ class RegisterController extends Controller
        $password = $_POST['passwd'];
 
        $registerDao = new registerDao();
-       
-       echo "<h1>PROCESO DE REGISTRO $email $password </h1>";
+       $registerDao->saveUser($email, $password);
+
    }
 
 }
